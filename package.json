@@ -1,0 +1,19 @@
+{
+  "name": "matteo-asset-service",
+  "version": "1.0.0",
+  "description": "Example project, node.js enterprise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paspao/matteo-asset-service.git"
+  },
+  "author": "Pasquale Paola",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/paspao/matteo-asset-service/issues"
+  },
+  "homepage": "https://github.com/paspao/matteo-asset-service#readme"
+}
