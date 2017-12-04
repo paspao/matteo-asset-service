@@ -6,8 +6,7 @@ var assetModule = require('../index');
 var testAsset = {name: 'tavolo', status: 'wait'};
 
 assetModule.syncAsset().then(function () {
-
-return assetModule.insertAsset(testAsset);  
+  return assetModule.insertAsset(testAsset);  
 })
 .then(function () {
   return assetModule.queryAsset({where:{name: 'tavolo'}, raw: true});

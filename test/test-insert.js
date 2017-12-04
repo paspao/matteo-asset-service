@@ -6,8 +6,7 @@ var assetModule = require('../index');
 var testAsset = {name: 'tavolo', status: 'wait'};
 
 assetModule.syncAsset().then(function () {
-
-return assetModule.insertAsset(testAsset);  
+  return assetModule.insertAsset(testAsset);  
 })
 .then(function (result) {
   console.log(result.toJSON());
