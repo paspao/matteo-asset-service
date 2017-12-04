@@ -1,3 +1,5 @@
+'use strict';
+
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('assetdb', 'asset', 'asset', {
   host: 'localhost',
@@ -33,10 +35,11 @@ module.exports={
     }); 
   },
     
-	updateAsset: function(){
-		return "updated";
+	updateAsset: function (values, options) {
+		return Asset.update(values, options);
 	},
-	queryAsset: function(){
-		return "some asset";
+  
+	queryAsset: function (condition) {
+		return Asset.findAll(condition);
 	}
-}
+};

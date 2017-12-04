@@ -1,8 +1,9 @@
-// test/hello-world.js
+'use strict';
+
 var tap = require('tap')
 var assetModule = require('../index');
 
-var testAsset = {name: 'tavolo', status: 'operativo'};
+var testAsset = {name: 'tavolo', status: 'wait'};
 
 assetModule.syncAsset().then(function () {
 
