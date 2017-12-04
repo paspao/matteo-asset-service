@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/paspao/matteo-asset-service/issues"
   },
-  "homepage": "https://github.com/paspao/matteo-asset-service#readme"
+  "homepage": "https://github.com/paspao/matteo-asset-service#readme",
+  "dependencies": {
+    "sequelize": "^4.26.0",
+    "sqlite3": "^3.1.13"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
 }
