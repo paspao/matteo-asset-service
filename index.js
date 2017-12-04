@@ -37,11 +37,13 @@ module.exports = async function (database, username, password, host, storage) {
     queryAsset: queryAsset
   }
   
-  function insertAsset (asset) {
-    return Asset.create({
+  async function insertAsset (asset) {
+    var result = await Asset.create({
       name: asset.name,
       status: asset.status
-    }); 
+    });
+    
+    return result.toJSON();
   }
     
 	function updateAsset (values, options) {
