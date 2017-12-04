@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/paspao/matteo-asset-service#readme",
   "dependencies": {
+    "pino": "^4.10.2",
     "sequelize": "^4.26.0",
     "sqlite3": "^3.1.13"
   },
