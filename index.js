@@ -45,12 +45,15 @@ module.exports = async function (database, username, password, host, storage) {
     
     return result.toJSON();
   }
-    
-	function updateAsset (values, options) {
-		return Asset.update(values, options);
-	}
   
-	function queryAsset (condition) {
-		return Asset.findAll(condition);
-	}
+  async function updateAsset (values, options) {
+    var result = await Asset.update(values, options);
+    return result;
+  }
+  
+  async function queryAsset (condition) {
+    var result = await Asset.findAll(condition);
+    return result;
+  }
+  
 };
