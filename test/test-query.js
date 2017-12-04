@@ -13,16 +13,3 @@ test('query', async (t) => {
   
   t.equal(queryResult[0].name, testAsset.name);
 })
-
-/* assetModule.syncAsset().then(function () {
-  return 
-})
-.then(function () {
-  return assetModule.queryAsset({where:{name: 'tavolo'}, raw: true});
-})
-.then(function (result) {
-  tap.equal(testAsset.name, 'tavolo');
-  tap.equal(testAsset.status, 'wait');
-}, function (err) {
-    console.log(err);
-}); */
