@@ -3,7 +3,7 @@
 const Sequelize = require('sequelize');
 
 // 'assetdb', 'asset', 'asset', 'localhost', 'data/database.sqlite'
-module.exports = function (database, username, password, host, storage) {
+module.exports = async function (database, username, password, host, storage) {
   
   const sequelize = new Sequelize(database, username, password, {
     host: host,
@@ -24,20 +24,17 @@ module.exports = function (database, username, password, host, storage) {
   });
   
   const Asset = sequelize.define('asset', {
-    id: { type: Sequelize.INTEGER, primaryKey: true,autoIncrement: true},
+    // id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
     name: Sequelize.STRING,
     status: Sequelize.STRING
   });
   
+  await Asset.sync({force: true});
+  
   return {
-    syncAsset: syncAsset,
     insertAsset: insertAsset,
     updateAsset: updateAsset,
     queryAsset: queryAsset
-  }
-  
-  function syncAsset() {
-    return Asset.sync({force: true}); 
   }
   
   function insertAsset (asset) {
