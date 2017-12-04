@@ -23,10 +23,17 @@ const Asset = sequelize.define('asset', {
   status: Sequelize.STRING
 });
 
-Asset.sync({force: true}).then(() => {
-  // Table created
-  return Asset.create({
-    name: 'sedia',
-    status: 'rotta'
-  });
-});
+module.exports = {
+  hello: function() {
+    return "hello";
+  },
+  
+  syncAsset: function() {return Asset.sync({force: true}); },
+  
+  insertAsset: function(asset) {
+    return Asset.create({
+      name: asset.name,
+      status: asset.status
+    });  
+  }
+};
