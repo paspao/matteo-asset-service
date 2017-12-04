@@ -1,7 +1,7 @@
 'use strict';
 
 var tap = require('tap')
-var assetModule = require('../index');
+var assetModule = require('../index')('assetdb', 'asset', 'asset', 'localhost', 'data/database2.sqlite');
 
 var testAsset = {name: 'tavolo', status: 'wait'};
 
