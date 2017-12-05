@@ -64,7 +64,7 @@ module.exports = async function (database, username, password, host, storage) {
       
       Asset.create(chunk).then(function () { 
         cb(); 
-      })
+      }).catch(cb)
       
     }
     return ws
