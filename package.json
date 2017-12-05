@@ -1,6 +1,6 @@
 {
-  "name": "matteo-asset-service",
-  "version": "1.0.0",
+  "name": "@vitoloper/matteo-asset-service",
+  "version": "0.0.1",
   "description": "Example project, node.js enterprise",
   "main": "index.js",
   "scripts": {

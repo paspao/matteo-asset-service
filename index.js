@@ -1,6 +1,7 @@
 'use strict';
 
 const Sequelize = require('sequelize');
+var Writable = require('stream').Writable;
 
 // 'assetdb', 'asset', 'asset', 'localhost', 'data/database.sqlite'
 module.exports = async function (database, username, password, host, storage) {
@@ -34,7 +35,8 @@ module.exports = async function (database, username, password, host, storage) {
   return {
     insertAsset: insertAsset,
     updateAsset: updateAsset,
-    queryAsset: queryAsset
+    queryAsset: queryAsset,
+    createWriteStream: createWriteStream
   }
   
   async function insertAsset (asset) {
@@ -54,6 +56,18 @@ module.exports = async function (database, username, password, host, storage) {
   async function queryAsset (condition) {
     var result = await Asset.findAll(condition);
     return result;
+  }
+  
+  function createWriteStream () {
+    var ws = Writable({objectMode: true});
+    ws._write = function (chunk, enc, cb) {
+      
+      Asset.create(chunk).then(function () { 
+        cb(); 
+      })
+      
+    }
+    return ws
   }
   
 };
